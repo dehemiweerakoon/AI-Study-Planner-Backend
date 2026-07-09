@@ -26,6 +26,8 @@ app.use(function(req, res, next) {
     next();
 });
 
+require('./startup/routes')(app);
+
 const PORT = process.env.PORT || 9000;
 app.listen(PORT,  () =>{ 
     console.log(`Example app listening on port ${PORT}!`)   // number the env 

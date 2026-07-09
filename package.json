@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/dehemiweerakoon/AI-Study-Planner-Backend#readme",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "config": "^4.4.2",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
@@ -32,6 +33,7 @@
     "lodash": "^4.18.1",
     "mongoose": "^9.7.4",
     "morgan": "^1.11.0",
+    "pick": "^0.0.1",
     "underscore": "^1.13.8",
     "winston": "^3.19.0"
   },
