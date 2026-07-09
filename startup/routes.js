@@ -8,4 +8,4 @@ module.exports = function (app) {
     app.use('/api/user',user);
     app.use('/api/auth',auth);
     app.use(error);
-}
+}/// hiu
