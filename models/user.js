@@ -27,7 +27,9 @@ const userSchema = new mongoose.Schema(
         },
         password: {
             type: String,
-            required: [true, "Password is required"],
+            required: function(){
+                return !this.googleId;
+            },
             maxlength: [255, "Hashed password cannot exceed 255 characters"], // Suitable for bcrypt hashes
         },
         phone: {
@@ -41,6 +43,11 @@ const userSchema = new mongoose.Schema(
             required: false,
             trim: true,
             maxlength: [2048, "Profile image URL cannot exceed 2048 characters"],
+        },
+        googleId: {
+            type: String,
+            unique: true,
+            sparse: true,
         },
         role: {
             type: String,
@@ -97,6 +104,7 @@ const validateUser = (user) => {
         }),
         role: Joi.string().valid("user", "admin").default("user"),
         isVerified: Joi.boolean().default(false),
+        googleId: Joi.string().allow("", null),
     });
 
     return schema.validate(user, { abortEarly: false }); // Returns all validation errors at once
@@ -113,5 +121,5 @@ const validateAuth = (req) => {
 module.exports = {
     User,
     validateUser,
-    validateAuth
-}
+    validateAuth,
+};
