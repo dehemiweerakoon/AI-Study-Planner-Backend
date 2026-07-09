@@ -1,0 +1,29 @@
+{
+  "name": "ai-study-planner-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+  "start": "node index.js",
+  "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dehemiweerakoon/AI-Study-Planner-Backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/dehemiweerakoon/AI-Study-Planner-Backend/issues"
+  },
+  "homepage": "https://github.com/dehemiweerakoon/AI-Study-Planner-Backend#readme",
+  "dependencies": {
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  }
+  
+}
