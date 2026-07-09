@@ -17,7 +17,9 @@ routes.post('/', async (req, res) => {
     if (!result) return res.status(400).send('Invalid user or Password');
 
     const token = user.generateAuthToken();
-    res.send(token);
+
+    res.header('x-auth-token',token).send(_.pick(user,['firstName','email','_id']));
+    
 })
 
 // 1. Kickstart Google login
