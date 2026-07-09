@@ -8,6 +8,8 @@ Joi.objectId =require('joi-objectid')(Joi);
 
 require('dotenv').config();
 require('./startup/db')();
+require("./startup/config")();
+
 if(app.get('env') === 'development'){
     app.use(morgan('tiny'));
     Debugger('Morgan Enabled');
