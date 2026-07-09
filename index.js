@@ -1,18 +1,19 @@
-// Import the core Express module
-const express = require('express');
+// Load environment variables immediately
+require('dotenv').config();
 
-// Initialize the Express application instance
+const express = require('express');
 const app = express();
 
-// Define a network port for the local server
-const PORT = 3000;
+// Use the PORT variable from .env, fallback to 3000 if undefined
+const PORT = process.env.PORT || 3000;
 
-// Setup a basic GET route configuration for the root URL
 app.get('/', (req, res) => {
-    res.send('Hello World! Your Express server is running successfully.');
+    res.send('Hello World! Your environment variables are working.');
 });
 
-// Start the server and listen for incoming HTTP traffic
 app.listen(PORT, () => {
-    console.log(`Server is running at http://localhost:${PORT}`);
+    console.log(`Server is running on port ${PORT}`);
+    // Example of accessing another variable safely
+    console.log(`Database connected to: ${process.env.DATABASE_URL}`);
 });
+
